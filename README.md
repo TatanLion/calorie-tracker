@@ -1,50 +1,48 @@
-# React + TypeScript + Vite
+# Calorie Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto simulando una app para controlar el consumo y quema de calorias, con gráficos mostrando resumen por fechas.
 
-Currently, two official plugins are available:
+## Comenzando 🚀
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
 
-## Expanding the ESLint configuration
+Mira **[Deployment](https://calorie-tracker-ts-tatanlion.netlify.app/)** para conocer como desplegar el proyecto.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+### Pre-requisitos 📋
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+_Realizar un git clone del proyecto_
+
+_Para HTTPS_
+```
+https://github.com/TatanLion/calorie-tracker.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Instalación 🔧
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+_Se sugiere la instalación de [Git](https://git-scm.com/) y un editor de código de preferencia, en mi caso uso [VsCode](https://code.visualstudio.com/) para poder manipular y observar el proyecto_
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Construido con 🛠️
+
+* Vite [Vite](https://vite.dev/)
+* Tailwind [Tailwind](https://tailwindcss.com/)
+* HeroIcons [HeroIcons](https://heroicons.com/)
+* ChartJs [ChartJs](https://www.chartjs.org/)
+
+## Contribuyendo 🖇️
+
+Por favor lee el [CONTRIBUTING.md](https://github.com/TatanLion/calorie-tracker) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
+
+## Autores ✒️
+
+* **Jonathan Amaya** - *Ing Sistemas - Desarrollador Web* - [TatanLion](https://github.com/TatanLion)
+
+## Expresiones de Gratitud 🎁
+
+* Comenta a otros sobre este proyecto 📢
+* Invita una cerveza 🍺 o un café ☕ a alguien del equipo. 
+* Da las gracias públicamente 🤓.
+* etc.
+
+---
+⌨️ con ❤️ por [TatanLion](https://github.com/TatanLion) 😊
