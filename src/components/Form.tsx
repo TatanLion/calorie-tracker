@@ -1,4 +1,4 @@
-import { useState, ChangeEvent, FormEvent, Dispatch, useEffect } from "react"
+import { useState, ChangeEvent, Dispatch, useEffect } from "react"
 import { categories } from "../data/categories"
 import type { Activity } from "../types"
 import { ActivityActions, ActivityState } from "../reducers/activity-reducer"
@@ -51,7 +51,7 @@ export default function Form({ state, dispatch }: FormProps) {
         return name.trim() !== '' && calories > 0
     }
 
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = () => {
         // Guardamos en el state con useReducer
         dispatch({ type: 'save-activity', payload: { newActivity: activity } })
         setActivity(createNewActivity())

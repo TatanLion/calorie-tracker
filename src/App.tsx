@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useReducer, useState, Dispatch } from 'react';
+import { useEffect, useMemo, useReducer, useState } from 'react';
 import Form from './components/Form';
 import { initialState, activityReducer } from './reducers/activity-reducer';
 import ActivityList from './components/ActivityList';
