@@ -10,6 +10,7 @@ function App() {
 
   const [state, dispatch] = useReducer(activityReducer, initialState);
 
+  // State to show summary
   const [showSummary, setShowSummary] = useState<boolean>(false);
 
   // Save on localStorage
@@ -22,6 +23,8 @@ function App() {
   const handleShowSummary = () => {
     setShowSummary(true);
   }
+
+  const isEmptyActivities = useMemo(() => state.activities.length === 0, [state.activities]);
 
   return (
     <>
@@ -60,7 +63,10 @@ function App() {
               activities={state.activities}
             />
           </div>
-          <button className='bg-green-700 hover:bg-green-600 text-white font-semibold px-5 py-2 w-max mx-auto flex justify-center' onClick={() => handleShowSummary()}>
+          <button 
+            className='bg-green-700 hover:bg-green-600 text-white font-semibold px-5 py-2 w-max mx-auto flex justify-center disabled:pointer-events-none disabled:opacity-40' onClick={() => handleShowSummary()}
+            disabled={isEmptyActivities}
+          >
             Ver Historial
           </button>
         </section>

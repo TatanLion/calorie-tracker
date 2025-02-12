@@ -1,4 +1,4 @@
-import { useState, ChangeEvent, Dispatch, useEffect } from "react"
+import { useState, ChangeEvent, Dispatch, useEffect, FormEvent } from "react"
 import { categories } from "../data/categories"
 import type { Activity } from "../types"
 import { ActivityActions, ActivityState } from "../reducers/activity-reducer"
@@ -51,9 +51,22 @@ export default function Form({ state, dispatch }: FormProps) {
         return name.trim() !== '' && calories > 0
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = (e : FormEvent) => {
+        e.preventDefault()
+        
+        setTimeout(() => {
+            window.scrollTo({
+                top: document.documentElement.scrollHeight,
+                behavior: 'smooth'
+            });
+        }, 100)
+
         // Guardamos en el state con useReducer
-        dispatch({ type: 'save-activity', payload: { newActivity: activity } })
+        const activityCleaned = {
+            ...activity,
+            name: activity.name.charAt(0).toUpperCase() + activity.name.slice(1).toLowerCase()
+        }
+        dispatch({ type: 'save-activity', payload: { newActivity: activityCleaned } })
         setActivity(createNewActivity())
     }
 
